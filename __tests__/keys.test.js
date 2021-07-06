@@ -24,9 +24,14 @@ describe('Keys', () => {
 
   test('should return matching keys based from respective array', () => {
     let fSharp = new Keys();
+    let f= new Keys();
+    f.indexKey("F");
+    f.getModes();
+    f.printMode("ionian");
     fSharp.indexKey("F#");
     fSharp.getModes();
-    fSharp.sharpLoop("ionian");
-    expect(fSharp.activeMode).toEqual(["F#","G#","A#","B","C#","D#","F","F#"])
+    fSharp.printMode("ionian");
+    expect(fSharp.activeMode).toEqual(["F#","G#","A#","B","C#","D#","F","F#"]);
+    expect(f.activeMode).toEqual(["F","G","A","B♭","C","D","E","F"]);
   });
 });
