@@ -13,14 +13,22 @@ describe('Keys', () => {
     let fSharp = new Keys();
     fSharp.indexKey("F#");
     fSharp.getModes();
-    expect(fSharp.ionian).toEqual([6, 8, 10, 11, 13, 15, 17, 18]);
-    expect(fSharp.dorian).toEqual([6, 8, 9, 11, 13, 15, 17, 18]);
-    expect(fSharp.phrygian).toEqual([6, 8, 10, 11, 13, 15, 17, 18]);
-    expect(fSharp.lydian).toEqual([6, 8, 10, 11, 13, 15, 17, 18]);
-    expect(fSharp.mixolydian).toEqual([6, 8, 10, 11, 13, 15, 17, 18]);
-    expect(fSharp.aeolian).toEqual([6, 8, 9, 11, 13, 14, 16, 18]);
-    expect(fSharp.locrian).toEqual([6, 7, 9, 11, 12, 14, 16, 18]);
+    expect(fSharp.ionian).toEqual(    [6, 8, 10, 11, 13, 15, 17, 18]);
+    expect(fSharp.dorian).toEqual(    [6, 8, 9,  11, 13, 15, 16, 18]);
+    expect(fSharp.phrygian).toEqual(  [6, 7, 9,  11, 13, 14, 16, 18]);
+    expect(fSharp.lydian).toEqual(    [6, 8, 10, 12, 13, 15, 17, 18]);
+    expect(fSharp.mixolydian).toEqual([6, 8, 10, 11, 13, 15, 16, 18]);
+    expect(fSharp.aeolian).toEqual(   [6, 8, 9,  11, 13, 14, 16, 18]);
+    expect(fSharp.locrian).toEqual(   [6, 7, 9,  11, 12, 14, 16, 18]);
   });
+
+  // test('should return matching keys based from respective array', () => {
+  //   let fSharp = new Keys();
+  //   fSharp.indexKey("F#");
+  //   fSharp.getModes();
+  //   fSharp.sharpLoop();
+  //   expect(fSharp.ionian).toEqual(["F#","G#","A#","B","C#","D#","F","F#"])
+  // });
 });
 
 // fSharp.ChromaticScaleSharp(ionian array);

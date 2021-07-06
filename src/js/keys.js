@@ -28,6 +28,18 @@ export default class Keys {
     this.locrian =    [i + 0, i + 1, i + 3, i + 5, i + 6, i + 8, i + 10, i + 12];
   }
   
+  /*
+  test('should return matching keys based from respective array', () => {
+    let fSharp = new Keys();
+    fSharp.indexKey("F#");
+    fSharp.getModes();
+    fSharp.sharpLoop();
+    expect(fSharp.ionian).toEqual(["F#","G#","A#","B","C#","D#","F","F#"])
+  })
+
+
+  */
+
   // sharpLoop() {
   //   this.ionian = this.ionian.map(function(element) {
   //     return this.ChromaticScaleSharp[element]
