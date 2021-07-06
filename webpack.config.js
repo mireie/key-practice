@@ -15,11 +15,10 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Currency Exchange',
+      title: 'Pratice Buddy',
       template: './src/index.html',
       inject: 'body'
     }),
-    new Dotenv()
   ],
   module: {
     rules: [
