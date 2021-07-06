@@ -29,3 +29,6 @@
 ## License
 
 ## Contact Information
+
+
+<!-- //NEXT STEP: UI STUFF (notating which scale, printing scale, making it look nice, drum machine, [play scale button??], parsing?) -->

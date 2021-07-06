@@ -1,1 +1,89 @@
-/* */
+body {
+  background-color: hotpink;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  min-width: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23FFD1BA' fill-opacity='1' d='M0,320L10.9,272C21.8,224,44,128,65,106.7C87.3,85,109,139,131,154.7C152.7,171,175,149,196,138.7C218.2,128,240,128,262,122.7C283.6,117,305,107,327,96C349.1,85,371,75,393,58.7C414.5,43,436,21,458,58.7C480,96,502,192,524,240C545.5,288,567,288,589,250.7C610.9,213,633,139,655,122.7C676.4,107,698,149,720,170.7C741.8,192,764,192,785,192C807.3,192,829,192,851,197.3C872.7,203,895,213,916,197.3C938.2,181,960,139,982,138.7C1003.6,139,1025,181,1047,218.7C1069.1,256,1091,288,1113,304C1134.5,320,1156,320,1178,277.3C1200,235,1222,149,1244,138.7C1265.5,128,1287,192,1309,229.3C1330.9,267,1353,277,1375,256C1396.4,235,1418,181,1429,154.7L1440,128L1440,320L1429.1,320C1418.2,320,1396,320,1375,320C1352.7,320,1331,320,1309,320C1287.3,320,1265,320,1244,320C1221.8,320,1200,320,1178,320C1156.4,320,1135,320,1113,320C1090.9,320,1069,320,1047,320C1025.5,320,1004,320,982,320C960,320,938,320,916,320C894.5,320,873,320,851,320C829.1,320,807,320,785,320C763.6,320,742,320,720,320C698.2,320,676,320,655,320C632.7,320,611,320,589,320C567.3,320,545,320,524,320C501.8,320,480,320,458,320C436.4,320,415,320,393,320C370.9,320,349,320,327,320C305.5,320,284,320,262,320C240,320,218,320,196,320C174.5,320,153,320,131,320C109.1,320,87,320,65,320C43.6,320,22,320,11,320L0,320Z'%3E%3C/path%3E%3C/svg%3E"), linear-gradient(#df9ecc, #d13531);
+}
+
+.submit-btn {
+  padding: 2rem;
+  font-size:larger;
+}
+.app-container {
+  box-shadow: 0px 0px 10px black;
+}
+
+.header {
+  color:black;
+  /* text-shadow: 1px 1px 2px grey; */
+}
+
+#result {
+  background: linear-gradient(
+    144deg,
+    #FFD1BA,
+    #BEE5BF
+  );
+}
+
+#entry {
+  background: linear-gradient(
+    144deg,
+    #BEE5BF,
+    #CE7DA5
+  )
+}
+
+#entry p, #result h2 {
+  margin-top: 1rem;
+}
+
+.entry-block {
+  margin-bottom: 1rem;
+}
+
+input[type="number"], input[type="text"] {
+  display: block;
+  clear: both;
+  width:100%;
+}
+
+.btn {
+  display: block;
+  clear: both;
+  background-color:#493657;
+  color:#FFD1BA;
+  border-radius: 0;
+  width:100%;
+}
+
+/* .advanced {
+  display: none;
+} */
+
+.input-hide {
+  background-color: #303030;
+  color: white;
+  padding: .5rem;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  .input-hide {
+    display: none;
+  }
+}
+
+
+/* .test {
+  
+  background: linear-gradient(
+    angle,
+    color1,
+    color2,
+    )
+} */
+
