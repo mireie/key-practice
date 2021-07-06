@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timer.jquery/0.7.0/timer.jquery.js"></script>
+  <title>Practice Buddy</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Practice Buddy</h1>
+      <p></p>
+    </div>
+    <div class="row app-container">
+      <div class="col sticky-top" id="entry">
+        <form class="sticky-top" id="form">
+          <p>
+          <h2>Controls</h2>
+          <button type="submit" class="btn submit-btn">Submit</button>
+          </p>
+          <div class="entry-block">
+            <input type="checkbox" name="advanced" id="advanced">
+            <label for="advanced">Enable advanced features?</label>
+            <div class="advanced">
+              <h2>Keys</h2>
+              <button class="btn checkKeys">Check All Keys</button>
+              <div class="row keys-container">
+                <div class="col">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="A" id="aCheck" name="key">
+                    <label class="form-check-label" for="aCheck">
+                      A
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="B♭" id="a#Check" name="key">
+                    <label class="form-check-label" for="a#Check">
+                      A#/B♭
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="B" id="aCheck" name="key">
+                    <label class="form-check-label" for="bCheck">
+                      B
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="C" id="aCheck" name="key">
+                    <label class="form-check-label" for="cCheck">
+                      C
+                    </label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="E♭" id="d#Check" name="key">
+                    <label class="form-check-label" for="d#Check">
+                      D#/E♭
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="E" id="eCheck" name="key">
+                    <label class="form-check-label" for="eCheck">
+                      E
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="D♭" id="c#Check" name="key">
+                    <label class="form-check-label" for="cCheck">
+                      C#/D♭
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="D" id="dCheck" name="key">
+                    <label class="form-check-label" for="dCheck">
+                      D
+                    </label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="F" id="fCheck" name="key">
+                    <label class="form-check-label" for="fCheck">
+                      F
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="G♭" id="f#Check" name="key">
+                    <label class="form-check-label" for="f#Check">
+                      F#/G♭
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="G" id="gCheck" name="key">
+                    <label class="form-check-label" for="gCheck">
+                      G
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="A♭" id="g#Check" name="key">
+                    <label class="form-check-label" for="g#Check">
+                      G#/A♭
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <h2>Modes</h2>
+              <button class="btn checkModes">Check All Modes</button>
+              <div class="row modes-container">
+                <div class="col">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="ionian" id="ionianCheck" name="mode">
+                    <label class="form-check-label" for="ionianCheck">
+                      Ionian (Major)
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="dorian" id="dorianCheck" name="mode">
+                    <label class="form-check-label" for="dorianCheck">
+                      Dorian
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="phrygian" id="phrygianCheck" name="mode">
+                    <label class="form-check-label" for="phrygianCheck">
+                      Phrygian
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="lydian" id="lydianCheck" name="mode">
+                    <label class="form-check-label" for="lydianCheck">
+                      Lydian
+                    </label>
+                  </div>
+
+                </div>
+                <div class="col">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="mixolydian" id="mixolydianCheck" name="mode">
+                    <label class="form-check-label" for="mixolydianCheck">
+                      Mixolydian
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="aeolian" id="aeolianCheck" name="mode">
+                    <label class="form-check-label" for="aeolianCheck">
+                      Aeolian
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="locrian" id="locrianCheck" name="mode">
+                    <label class="form-check-label" for="locrianCheck">
+                      Locrian
+                    </label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="input-hide"><span id="input-text">Hide</span> the Options</div>
+      </div>
+      <div class="col-md-8 border-left" id="result">
+        <h2>Information</h2>
+        <hr>
+        <h3>Key: <span id="keyDisplay"></span></h3>
+        <h3>Mode: <span id="modeDisplay"></span></h3>
+        <h3>Scale: <span id="scaleDisplay"></span></h3>
+        <h3>Timer</h3>
+        <div id="div-id"></div>
+        <p id="output"></p>
+      </div>
+    </div>
+  </div>
+
+<script defer src="bundle.js"></script></body>
+</html>
