@@ -22,13 +22,13 @@ describe('Keys', () => {
     expect(fSharp.locrian).toEqual(   [6, 7, 9,  11, 12, 14, 16, 18]);
   });
 
-  // test('should return matching keys based from respective array', () => {
-  //   let fSharp = new Keys();
-  //   fSharp.indexKey("F#");
-  //   fSharp.getModes();
-  //   fSharp.sharpLoop();
-  //   expect(fSharp.ionian).toEqual(["F#","G#","A#","B","C#","D#","F","F#"])
-  // });
+  test('should return matching keys based from respective array', () => {
+    let fSharp = new Keys();
+    fSharp.indexKey("F#");
+    fSharp.getModes();
+    fSharp.sharpLoop("ionian");
+    expect(fSharp.modeTemp).toEqual(["F#","G#","A#","B","C#","D#","F","F#"])
+  });
 });
 
 // fSharp.ChromaticScaleSharp(ionian array);
