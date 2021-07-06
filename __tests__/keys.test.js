@@ -27,18 +27,6 @@ describe('Keys', () => {
     fSharp.indexKey("F#");
     fSharp.getModes();
     fSharp.sharpLoop("ionian");
-    expect(fSharp.modeTemp).toEqual(["F#","G#","A#","B","C#","D#","F","F#"])
+    expect(fSharp.activeMode).toEqual(["F#","G#","A#","B","C#","D#","F","F#"])
   });
 });
-
-// fSharp.ChromaticScaleSharp(ionian array);
-//"F#","G#","A#","B","C#","D#","F","F#"
-
-/*
-array = [6, 8, 10, 11, 13, 15, 17, 18]
-const newIonian = array.map(function(element) {
-return this.ChromaticScaleSharp[element]
-});
-newIonian
-
-*/

@@ -28,7 +28,7 @@ export default class Keys {
   }
 
   sharpLoop(mode) {
-    this.modeTemp = this.[mode].map(function (element) {
+    this.activeMode = this.[mode].map(function (element) {
       let sharp = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"];
       return sharp[element];
     });
