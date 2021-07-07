@@ -28,11 +28,15 @@ export class Session {
 
   getPair() {
     const availablePairs = this.pairs.filter(pair => pair.status === "incomplete");
-    const seed = Math.floor(Math.random() * availablePairs.length);
-    let pairID = availablePairs[seed].id;
-    this.pairs[pairID].status = "In Progress";
-    console.log(availablePairs);
-    return availablePairs[seed];
+    if (availablePairs.length <1) {
+      this.sessionComplete();
+    } else {
+      const seed = Math.floor(Math.random() * availablePairs.length);
+      let pairID = availablePairs[seed].id;
+      this.pairs[pairID].status = "In Progress";
+      console.log(availablePairs);
+      return availablePairs[seed];
+    }
   }
 
   getInputs() {
@@ -55,5 +59,8 @@ export class Session {
       }
       this.makePairs(keyArray, modeArray);
     }
+  }
+  sessionComplete() {
+    alert("You're done!");
   }
 }
