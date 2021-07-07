@@ -5,6 +5,7 @@ import './css/styles.css';
 import Keys from './js/keys.js';
 import { Session } from './js/session';
 
+
 function displayKeyMode(key, mode, scale) {
   $("#keyDisplay").html(key);
   $("#modeDisplay").html(mode);
@@ -47,11 +48,10 @@ function runKeySet(keyConst, usableObject) {
   displayKeyMode(usableObject.key, usableObject.mode, scale);
 }
 
-var interval;
-
-function countdown() {
+let interval;
+function countdown(entry1, entry2) {
   clearInterval(interval);
-  interval = setInterval( function() {
+  interval = setInterval(function() {
       var timer = $('.js-timeout').html();
       timer = timer.split(':');
       var minutes = timer[0];
@@ -66,19 +66,30 @@ function countdown() {
 
       $('.js-timeout').html(minutes + ':' + seconds);
 
-      if (minutes == 0 && seconds == 0) clearInterval(interval);
+      if (minutes == 0 && seconds == 0) {clearInterval(interval);
+        nextPair(entry1, entry2);
+        resetTime();
+        setInterval(countdown(entry1,entry2),1000);// eslint-disable-line
+    }
   }, 1000);
+}
+
+function resetTime() {
+  $('.js-timeout').text("2:00");
+
 }
 
 $(document).ready(() => {
   $('#start-timer').click(function () {
-    $('.js-timeout').text("2:00");
-    countdown();
-  });
+    resetTime();
+    clearInterval(interval);
+  }); //same click function to 113
 
   $('#play').click(function () {
-    $('.js-timeout').show();
-    countdown();
+    countdown(keyConst, session);
+    // resetTime();
+    // setInterval(resetTime, 11500);
+    // setInterval(countdown(keyConst, session), 120000);
   });
   
   $('#pause').click(function () {
@@ -88,11 +99,11 @@ $(document).ready(() => {
   $('#next').click(function () {
     nextPair(keyConst, session);
     clearInterval(interval);
-    $('.js-timeout').text("2:00");
+    resetTime();
   });
 
   $('#stop').click(function () {
-    $('.js-timeout').text("2:00");
+    resetTime();
     clearInterval(interval);
   });
 
@@ -132,5 +143,6 @@ $(document).ready(() => {
     checkUncheck("mode");
   });
 });
+
 
 
