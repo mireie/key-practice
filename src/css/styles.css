@@ -99,3 +99,7 @@ input[type="number"], input[type="text"] {
 .card-body {
   background-color: #fff;
 }
+
+ul#scale-list {
+  text-align: initial;
+}

@@ -8,10 +8,11 @@ import { Session } from './js/session';
 function displayKeyMode(key, mode, scale) {
   $("#keyDisplay").html(key);
   $("#modeDisplay").html(mode);
+  $("#scaleDisplay").html("");
   scale.forEach(function(element){
-    $("#scaleDisplay").append(scale);
+    $("#scaleDisplay").append(element + "&nbsp;" + "&nbsp;" );
   })
-  $("#scaleDisplay").html(scale);
+
 }
 
 function checkUncheck(name) {
