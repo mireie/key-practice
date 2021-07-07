@@ -20,7 +20,7 @@
         <form class="sticky-top" id="form">
           <p>
           <h2>Controls</h2>
-          <div class="btn submit-btn">Submit</div>
+          <div id="start-timer" class="btn submit-btn">Submit</div>
           <div class="btn mt-3 skip">Next Pair</div>
           </p>
           <div class="entry-block">
@@ -174,7 +174,15 @@
         <h3>Mode: <span id="modeDisplay"></span></h3>
         <h3>Scale: <span id="scaleDisplay"></span></h3>
         <h3>Timer</h3>
-        <div id="divId"></div>
+        <p>Session will end in <span class="js-timeout">2:00</span>.</p>
+        <!-- <button id="js-startTimer">Start Countdown</button>
+        <button id="js-resetTimer">Stop &amp; Reset</button> -->
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+          <button id="play" type="button" class="btn btn-outline-primary">Play</button>
+          <button id="pause" type="button" class="btn btn-outline-primary">Pause</button>
+          <button id="next" type="button" class="btn btn-outline-primary">Skip</button>
+          <button id="stop" type="button" class="btn btn-outline-primary">Stop</button>
+        </div>
         <p id="output"></p>
       </div>
     </div>
