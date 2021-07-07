@@ -11,6 +11,7 @@ export default class KMPair {
 export class Session {
   constructor() {
     this.pairs = [];
+    this.counter =0;
   }
 
   makePairs(keyArray, modeArray) {
@@ -24,6 +25,7 @@ export class Session {
       element.id = index;
     });
     this.pairs = pairArray;
+    $("#scale-total").text(this.pairs.length);
   }
 
   getPair() {
@@ -35,6 +37,9 @@ export class Session {
       let pairID = availablePairs[seed].id;
       this.pairs[pairID].status = "In Progress";
       console.log(availablePairs);
+      this.counter++;
+      $("#counter").text(this.counter);
+     
       return availablePairs[seed];
     }
   }
