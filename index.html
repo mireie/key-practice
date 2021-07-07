@@ -20,36 +20,38 @@
         <form class="sticky-top" id="form">
           <p>
           <h2>Controls</h2>
-          <button type="submit" class="btn submit-btn">Submit</button>
+          <div class="btn submit-btn">Submit</div>
+          <div class="btn mt-3 skip">Next Pair</div>
           </p>
           <div class="entry-block">
             <input type="checkbox" name="advanced" id="advanced">
-            <label for="advanced">Enable advanced features?</label>
+            <label for="advanced">Customize keys and modes</label>
             <div class="advanced">
+              <div class="alert-danger p-1" id="error"></div>
               <h2>Keys</h2>
               <button class="btn checkKeys">Check All Keys</button>
               <div class="row keys-container">
                 <div class="col">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="A" id="aCheck" name="key">
+                    <input class="form-check-input" type="checkbox" checked="true" value="A" id="aCheck" name="key">
                     <label class="form-check-label" for="aCheck">
                       A
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="B♭" id="a#Check" name="key">
+                    <input class="form-check-input" type="checkbox" checked="true" value="B♭" id="b♭Check" name="key">
                     <label class="form-check-label" for="a#Check">
-                      A#/B♭
+                      B♭
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="B" id="aCheck" name="key">
+                    <input class="form-check-input" type="checkbox" checked="true" value="B" id="bCheck" name="key">
                     <label class="form-check-label" for="bCheck">
                       B
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="C" id="aCheck" name="key">
+                    <input class="form-check-input" type="checkbox" checked="true" value="C" id="aCheck" name="key">
                     <label class="form-check-label" for="cCheck">
                       C
                     </label>
@@ -57,25 +59,25 @@
                 </div>
                 <div class="col">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="E♭" id="d#Check" name="key">
+                    <input class="form-check-input" type="checkbox" checked="true" value="E♭" id="d#Check" name="key">
                     <label class="form-check-label" for="d#Check">
-                      D#/E♭
+                      E♭
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="E" id="eCheck" name="key">
+                    <input class="form-check-input" type="checkbox" checked="true" value="E" id="eCheck" name="key">
                     <label class="form-check-label" for="eCheck">
                       E
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="D♭" id="c#Check" name="key">
+                    <input class="form-check-input" type="checkbox" checked="true" value="D♭" id="c#Check" name="key">
                     <label class="form-check-label" for="cCheck">
-                      C#/D♭
+                      D♭
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="D" id="dCheck" name="key">
+                    <input class="form-check-input" type="checkbox" checked="true" value="D" id="dCheck" name="key">
                     <label class="form-check-label" for="dCheck">
                       D
                     </label>
@@ -83,27 +85,27 @@
                 </div>
                 <div class="col">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="F" id="fCheck" name="key">
+                    <input class="form-check-input" type="checkbox" checked="true" value="F" id="fCheck" name="key">
                     <label class="form-check-label" for="fCheck">
                       F
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="G♭" id="f#Check" name="key">
+                    <input class="form-check-input" type="checkbox" checked="true" value="F#" id="f#Check" name="key">
                     <label class="form-check-label" for="f#Check">
                       F#/G♭
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="G" id="gCheck" name="key">
+                    <input class="form-check-input" type="checkbox" checked="true" value="G" id="gCheck" name="key">
                     <label class="form-check-label" for="gCheck">
                       G
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="A♭" id="g#Check" name="key">
+                    <input class="form-check-input" type="checkbox" checked="true" value="A♭" id="g#Check" name="key">
                     <label class="form-check-label" for="g#Check">
-                      G#/A♭
+                      A♭
                     </label>
                   </div>
                 </div>
@@ -113,25 +115,25 @@
               <div class="row modes-container">
                 <div class="col">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="ionian" id="ionianCheck" name="mode">
+                    <input class="form-check-input" type="checkbox" checked="true" value="ionian" id="ionianCheck" name="mode">
                     <label class="form-check-label" for="ionianCheck">
                       Ionian (Major)
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="dorian" id="dorianCheck" name="mode">
+                    <input class="form-check-input" type="checkbox" checked="true" value="dorian" id="dorianCheck" name="mode">
                     <label class="form-check-label" for="dorianCheck">
                       Dorian
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="phrygian" id="phrygianCheck" name="mode">
+                    <input class="form-check-input" type="checkbox" checked="true" value="phrygian" id="phrygianCheck" name="mode">
                     <label class="form-check-label" for="phrygianCheck">
                       Phrygian
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="lydian" id="lydianCheck" name="mode">
+                    <input class="form-check-input" type="checkbox" checked="true" value="lydian" id="lydianCheck" name="mode">
                     <label class="form-check-label" for="lydianCheck">
                       Lydian
                     </label>
@@ -140,19 +142,19 @@
                 </div>
                 <div class="col">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="mixolydian" id="mixolydianCheck" name="mode">
+                    <input class="form-check-input" type="checkbox" checked="true" value="mixolydian" id="mixolydianCheck" name="mode">
                     <label class="form-check-label" for="mixolydianCheck">
                       Mixolydian
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="aeolian" id="aeolianCheck" name="mode">
+                    <input class="form-check-input" type="checkbox" checked="true" value="aeolian" id="aeolianCheck" name="mode">
                     <label class="form-check-label" for="aeolianCheck">
                       Aeolian
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="locrian" id="locrianCheck" name="mode">
+                    <input class="form-check-input" type="checkbox" checked="true" value="locrian" id="locrianCheck" name="mode">
                     <label class="form-check-label" for="locrianCheck">
                       Locrian
                     </label>
@@ -172,11 +174,12 @@
         <h3>Mode: <span id="modeDisplay"></span></h3>
         <h3>Scale: <span id="scaleDisplay"></span></h3>
         <h3>Timer</h3>
-        <div id="div-id"></div>
+        <div id="divId"></div>
         <p id="output"></p>
       </div>
     </div>
   </div>
 
 <script defer src="bundle.js"></script></body>
+
 </html>
