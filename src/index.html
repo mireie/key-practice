@@ -16,14 +16,11 @@
     <div class="row app-container">
       <div class="col-md sticky-top" id="entry">
         <form class="sticky-top" id="form">
-          <p>
-          <div class="btn mt-3 skip">Next Scale</div>
-          </p>
           <div class="entry-block">
-            <div class="advanced">
+            <div class="controls mt-3">
               <div class="alert-danger p-1" id="error"></div>
               <h2>Keys</h2>
-              <button class="btn checkKeys">Check All Keys</button>
+              <div class="btn checkKeys mb-3">Select All Keys</div>
               <div class="row keys-container">
                 <div class="col">
                   <div class="form-check">
@@ -104,8 +101,9 @@
                   </div>
                 </div>
               </div>
+              <hr>
               <h2>Modes</h2>
-              <button class="btn checkModes">Check All Modes</button>
+              <div class="btn checkModes mb-3">Select All Modes</div>
               <div class="row modes-container">
                 <div class="col">
                   <div class="form-check">
@@ -164,6 +162,8 @@
                 </div>
               </div>
             </div>
+            <hr>
+            <div class="btn mt-3 skip">Next Scale</div>
             <div class="btn submit-btn mt-3">Submit</div>
           </div>
         </form>
@@ -171,7 +171,7 @@
       </div>
       <div class="col-md-8 border-left" id="result">
         <div class="row card-contain">
-          <div class="col active-stats">
+          <div class="col-12 active-stats">
             <div class="card text-center">
               <div class="card-header">
                 <h2 class="display-3">Scale</h2>
@@ -185,16 +185,17 @@
               </div>
             </div>
           </div>
-          <div class="col result-stats">
+          <div class="col-12 result-stats">
             <div class="card text-center">
               <div class="card-header">
-                <h2 class="display-3">Results</h2>
+                <h2 class="display-3">All Done!</h2>
               </div>
               <div class="card-body">
+                <h4 class="display-4">Scales Practiced</h4>
                 <ul id="scale-list"></ul>
               </div>
               <div class="card-footer text-muted">
-                y Total Scales
+                <span id="scale-total-results"></span> Total Scales
               </div>
             </div>
           </div>

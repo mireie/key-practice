@@ -15,6 +15,7 @@ export class Session {
   }
 
   makePairs(keyArray, modeArray) {
+    this.counter = 0;
     let pairArray = [];
     keyArray.forEach(function (key) {
       modeArray.forEach(function (mode) {
@@ -39,7 +40,6 @@ export class Session {
       console.log(availablePairs);
       this.counter++;
       $("#counter").text(this.counter);
-     
       return availablePairs[seed];
     }
   }
@@ -65,17 +65,19 @@ export class Session {
         $("#error").slideToggle();
       }
       hideThings([".result-stats"]);
-      showThings([".skip", ".active-stats"]);
+      fadeInThings([".active-stats"]);
+      slideInThings([".skip"])
       this.makePairs(keyArray, modeArray);
       return this.getPair();
     }
   }
 
   sessionComplete() {
-    $(".result-stats").slideToggle();
-    $(".active-stats").slideToggle();
+    $("#scale-total-results").text(this.pairs.length);
+    $(".result-stats").fadeToggle();
+    $(".active-stats").toggle();
     $("#scale-list").html("");
-    $(".skip").slideToggle();
+    $(".skip").slideToggle("slow");
     this.pairs.forEach(function (element) {
       $("#scale-list").append(`<li>${element.key}-${element.mode}</li>`);
     });
@@ -85,16 +87,24 @@ export class Session {
 function hideThings(array) {
   array.forEach(function (element) {
     if ($(element).is(":visible")) {
-      $(element).fadeToggle();
+      $(element).toggle();
     }
   });
 }
 
-function showThings(array) {
+function fadeInThings(array) {
   array.forEach(function (element) {
     if ($(element).is(":hidden")) {
-      $(element).fadeToggle();
+      $(element).fadeToggle("slow");
     }
     $('.submit-btn').text('Get New Scales');
+  });
+}
+
+function slideInThings(array) {
+  array.forEach(function (element) {
+    if ($(element).is(":hidden")) {
+      $(element).slideToggle("slow");
+    }
   });
 }
