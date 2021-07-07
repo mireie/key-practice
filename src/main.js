@@ -11,7 +11,7 @@ function displayKeyMode(key, mode, scale) {
   $("#scaleDisplay").html("");
   scale.forEach(function(element){
     $("#scaleDisplay").append(element + "&nbsp;" + "&nbsp;" );
-  })
+  });
 
 }
 
