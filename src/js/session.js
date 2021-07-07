@@ -20,13 +20,18 @@ export class Session {
         pairArray.push(new KMPair(key, mode));
       });
     });
+    pairArray.forEach((element, index) => {
+      element.id = index;
+    });
     this.pairs = pairArray;
   }
 
   getPair() {
     const availablePairs = this.pairs.filter(pair => pair.status === "incomplete");
     const seed = Math.floor(Math.random() * availablePairs.length);
-    this.pairs[seed].status = "in progress";
+    let pairID = availablePairs[seed].id;
+    this.pairs[pairID].status = "In Progress";
+    console.log(availablePairs);
     return availablePairs[seed];
   }
 

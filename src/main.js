@@ -34,9 +34,9 @@ function checkUncheck(name) {
   }
 }
 
-function skip(session) {
-  return session.getPair();
-
+function nextPair(keyConst, session) {
+  let usableObject = session.getPair();
+  runKeySet(keyConst, usableObject);
 }
 
 function runKeySet(keyConst, usableObject) {
@@ -59,15 +59,20 @@ $(document).ready(() => {
   $('#advanced').click(function () {
     $('.advanced').slideToggle();
   });
+  
+  let keyConst = new Keys();
+  let session = new Session();
+  let usableObject;
+  
   $('.submit-btn').click(function () {
-    let keyConst = new Keys();
-    let session = new Session();
     session.getInputs();
-    let usableObject = session.getPair();
-    console.log(usableObject);
+    usableObject = session.getPair();
     runKeySet(keyConst, usableObject);
+    $('.submit-btn').text('Get New Pairs');
 
-    $('.skip').click(skip(session));
+  });
+  $('.skip').click(() => {
+    nextPair(keyConst, session);
   });
   $('.checkKeys').click(function () {
     event.preventDefault();
