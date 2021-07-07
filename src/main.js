@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import Keys from './js/keys.js';
 import { Session } from './js/session';
-// import Session from './js/session.js';
 
 function displayKeyMode(key, mode, scale) {
   $("#keyDisplay").html(key);
@@ -12,63 +11,72 @@ function displayKeyMode(key, mode, scale) {
   $("#scaleDisplay").html(scale);
 }
 
+function checkUncheck(name) {
+  let items = document.getElementsByName(name);
+  let ticker = 0;
+  for (var i = 0; i < items.length; i++) {
+    if (items[i].checked == true) {
+      ticker++;
+    }
+  }
+  if (ticker === items.length) {
+    for (let j = 0; j < items.length; j++) {
+      if (items[j].type == 'checkbox') {
+        items[j].checked = false;
+      }
+    }
+  } else {
+    for (let j = 0; j < items.length; j++) {
+      if (items[j].type == 'checkbox') {
+        items[j].checked = true;
+      }
+    }
+  }
+}
+
+function skip(session) {
+  return session.getPair();
+
+}
+
+function runKeySet(keyConst, usableObject) {
+  keyConst.indexKey(usableObject.key);
+  keyConst.getModes();
+  keyConst.printMode(usableObject.mode);
+  let scale = keyConst.activeMode;
+  displayKeyMode(usableObject.key, usableObject.mode, scale);
+}
 
 $(document).ready(() => {
-  // $('.input-hide').click(function () {
-  //   if ($('form').is(':hidden')) {
-  //     ($('#input-text')).text("Hide");
-  //   } else {
-  //     ($('#input-text')).text("Show");
-  //   }
-  //   $('form').slideToggle();
-  // });
-  // $('#advanced').click(function () {
-  //   $('.advanced').slideToggle();
-  // });
-  // $('.checkKeys').click(function () {
-
-  // });
-
-  $('#form').submit(function () {
-    event.preventDefault();
-    const keyArray = [];
-    const modeArray = [];
-    $("input:checkbox[name=key]:checked").each(function() {
-      keyArray.push($(this).val());
-    });
-    $("input:checkbox[name=mode]:checked").each(function() {
-      modeArray.push($(this).val());
-    });
+  $('.input-hide').click(function () {
+    if ($('form').is(':hidden')) {
+      ($('#input-text')).text("Hide");
+    } else {
+      ($('#input-text')).text("Show");
+    }
+    $('form').slideToggle();
+  });
+  $('#advanced').click(function () {
+    $('.advanced').slideToggle();
+  });
+  $('.submit-btn').click(function () {
     let keyConst = new Keys();
     let session = new Session();
-    session.makePairs(keyArray,modeArray);
-    console.log(session);
-    // keyConst.indexKey(key);
-    keyConst.getModes();
-    console.log(keyConst);
-    // keyConst.printMode(mode);
-    let scale = keyConst.activeMode;
-    console.log(scale);
-    // displayKeyMode(key, mode, scale);
+    session.getInputs();
+    let usableObject = session.getPair();
+    console.log(usableObject);
+    runKeySet(keyConst, usableObject);
+
+    $('.skip').click(skip(session));
   });
-
-  
-  // $('#div-id').timer({
-  //   duration: '3s',
-  //   callback: function() {
-  //     console.log("dude, hello?");
-  //   },
-  //   repeat: true
-  // });
-
-
+  $('.checkKeys').click(function () {
+    event.preventDefault();
+    checkUncheck("key");
+  });
+  $('.checkModes').click(function () {
+    event.preventDefault();
+    checkUncheck("mode");
+  });
 });
 
 
-// function checkedToppings() {
-//   let selectedToppings = [];
-//   $(".form-check-input:checkbox:checked").each(function () {
-//     selectedToppings.push(toppings.toppingList[$(this).prop("value")]);
-//   });
-//   return selectedToppings;
-// }

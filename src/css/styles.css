@@ -17,7 +17,6 @@ body {
 
 .header {
   color:black;
-  /* text-shadow: 1px 1px 2px grey; */
 }
 
 #result {
@@ -59,9 +58,9 @@ input[type="number"], input[type="text"] {
   width:100%;
 }
 
-/* .advanced {
+.advanced {
   display: none;
-} */
+}
 
 .input-hide {
   background-color: #303030;
@@ -76,14 +75,6 @@ input[type="number"], input[type="text"] {
     display: none;
   }
 }
-
-
-/* .test {
-  
-  background: linear-gradient(
-    angle,
-    color1,
-    color2,
-    )
-} */
-
+#error {
+  display:none;
+}

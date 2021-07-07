@@ -34,4 +34,16 @@ describe('Keys', () => {
     expect(fSharp.activeMode).toEqual(["F#","G#","A#","B","C#","D#","F","F#"]);
     expect(f.activeMode).toEqual(["F","G","A","B♭","C","D","E","F"]);
   });
+
+  test("should return the array position for the root note ", () => {
+    let inputKey = new Keys();
+    inputKey.indexKey('B');
+    expect(inputKey.key).toEqual(11);
+  });
+  
+  test("should return B flat for key pair value", () => {
+    let inputKey = new Keys();
+    inputKey.indexKey('B♭');
+    expect(inputKey.key).toEqual(10)
+  });
 });
