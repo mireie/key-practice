@@ -50,7 +50,6 @@ input[type="number"], input[type="text"] {
   border-radius: 0;
   width: 100%;
   transition: background 2s cubic-bezier(0.34, 1.56, 0.64, 1);
-
 }
 
 .input-hide {
@@ -98,10 +97,7 @@ ul#scale-list {
   color:#FFD1BA;
   background: #664b79;
   transition: background 2s cubic-bezier(0, 0.55, 0.45, 1);
-
 }
-
-
 input[type='checkbox']{
   width: 20px !important;
   height: 20px !important;
@@ -109,7 +105,6 @@ input[type='checkbox']{
   -moz-appearance: none;
   -o-appearance: none;
   appearance: none;
-  outline: 1px solid gray;
   box-shadow: none;
   font-size: 0.8em;
   text-align: center;
@@ -130,4 +125,15 @@ input[type='checkbox']:checked:after {
 
 .form-check-label {
   margin-left:.5rem;
+}
+
+.controls button {
+  background: linear-gradient( 144deg, #FFD1BA, #BEE5BF);
+  color:#303030;
+  box-shadow: 0px 0px 3px black;
+}
+
+.controls button:active {
+  outline: #303030;
+  border: #303030;
 }

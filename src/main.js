@@ -75,14 +75,13 @@ function countdown(entry1, entry2) {
       if (minutes == 0 && seconds == 0) {clearInterval(interval);
         nextPair(entry1, entry2);
         resetTime();
-        setInterval(countdown(entry1,entry2),1000);// eslint-disable-line
+        setInterval(countdown(entry1,entry2),1000);
     }
   }, 1000);
 }
 
 function resetTime() {
   $('.js-timeout').text("2:00");
-
 }
 
 $(document).ready(() => {
@@ -93,9 +92,6 @@ $(document).ready(() => {
 
   $('#play').click(function () {
     countdown(keyConst, session);
-    // resetTime();
-    // setInterval(resetTime, 11500);
-    // setInterval(countdown(keyConst, session), 120000);
   });
   
   $('#pause').click(function () {

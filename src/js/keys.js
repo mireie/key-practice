@@ -1,6 +1,6 @@
 export default class Keys {
   constructor() {
-    this.ChromaticScaleSharp = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"];
+    this.ChromaticScaleSharp = ["C", "C♯", "D", "D♯", "E", "F", "F♯", "G", "G♯", "A", "A♯", "B", "C", "C♯", "D", "D♯", "E", "F", "F♯", "G", "G♯", "A", "A♯", "B", "C"];
     this.ChromaticScaleFlat = ["C", "D♭", "D", "E♭", "E", "F", "G♭", "G", "A♭", "A", "B♭", "B", "C", "D♭", "D", "E♭", "E", "F", "G♭", "G", "A♭", "A", "B♭", "B", "C"];
     this.Ionian = [];
     this.Dorian = [];
@@ -12,7 +12,7 @@ export default class Keys {
   }
 
   indexKey(key) {
-    if(key.length === 2 && key.includes("#") || key.length === 1) {
+    if(key.length === 2 && key.includes("♯") || key.length === 1) {
       this.key = this.ChromaticScaleSharp.indexOf(key);
     } else {
       this.key = this.ChromaticScaleFlat.indexOf(key);
@@ -34,7 +34,7 @@ export default class Keys {
     const key = this.key;
     this.activeMode = this[mode].map(function (element) {
       if (key === 0 || key === 2 || key === 4 || key === 7 || key === 9 || key === 11 || key === 6) {
-        let sharp = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"];
+        let sharp = ["C", "C♯", "D", "D♯", "E", "F", "F♯", "G", "G♯", "A", "A♯", "B", "C", "C♯", "D", "D♯", "E", "F", "F♯", "G", "G♯", "A", "A♯", "B", "C"];
         return sharp[element];
       } else {
         let flat = ["C", "D♭", "D", "E♭", "E", "F", "G♭", "G", "A♭", "A", "B♭", "B", "C", "D♭", "D", "E♭", "E", "F", "G♭", "G", "A♭", "A", "B♭", "B", "C"];

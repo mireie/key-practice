@@ -31,7 +31,7 @@ describe('Keys', () => {
     fSharp.indexKey("F#");
     fSharp.getModes();
     fSharp.printMode("ionian");
-    expect(fSharp.activeMode).toEqual(["F#","G#","A#","B","C#","D#","F","F#"]);
+    expect(fSharp.activeMode).toEqual(["F♯","G♯","A♯","B","C♯","D♯","F","F♯"]);
     expect(f.activeMode).toEqual(["F","G","A","B♭","C","D","E","F"]);
   });
 
