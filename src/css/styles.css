@@ -66,7 +66,7 @@ input[type="number"], input[type="text"] {
   }
 }
 
-#error1, #error2, .result-stats, .skip, .active-stats, #pause {
+#error1, #error2, .result-stats, .skip, .active-stats {
   display: none;
 }
 
@@ -151,3 +151,7 @@ input {
   color: #493657;
   border-radius: 4px;
 }
+
+/* input[type=number]::-webkit-inner-spin-button {
+  opacity: 1;
+} */

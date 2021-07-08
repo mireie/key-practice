@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { nextPair } from './../main.js';
+import {nextPair} from './../main.js';
 
 export let interval;
 export function countdown(entry1, entry2) {
@@ -14,10 +14,8 @@ export function countdown(entry1, entry2) {
       minutes -= 1;
       seconds = 59;
     }
-    else if (seconds < 10 && length.seconds != 2) {
-      seconds = '0' + seconds;
-      $('.js-timeout').html(minutes + ':' + seconds);
-    }
+    else if (seconds < 10 && length.seconds != 2) seconds = '0' + seconds;
+    $('.js-timeout').html(minutes + ':' + seconds);
     if (minutes == 0 && seconds == 0 && $(".result-stats").is(":hidden")) {
       clearInterval(interval);
       nextPair(entry1, entry2);
