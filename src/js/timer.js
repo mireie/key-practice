@@ -1,8 +1,9 @@
 import $ from 'jquery';
+import {nextPair} from './../main.js';
 
-let interval;
+export let interval;
 export function countdown(entry1, entry2) {
-    interval = setInterval(function () {
+  interval = setInterval(function () {
     let timer = $('.js-timeout').html();
     timer = timer.split(':');
     let minutes = timer[0];
