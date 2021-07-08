@@ -4,8 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import Keys from './js/keys.js';
 import { Session } from './js/session';
-import { countdown,resetTime,interval } from './js/timer.js';
-
+import { countdown, resetTime, interval } from './js/timer.js';
 
 function displayKeyMode(key, mode, scale) {
   $("#keyDisplay").html(key);
@@ -54,24 +53,39 @@ function runKeySet(keyConst, usableObject) {
   displayKeyMode(usableObject.key, usableObject.mode, scale);
 }
 
+function showPlay() {
+  if ($('#play').is(":hidden")) {
+    $('#play').show();
+    $('#pause').hide();
+  }
+}
+
+function resetStop() {
+  resetTime();
+  clearInterval(interval);
+  showPlay();
+}
+
+
 $(document).ready(() => {
   $('#play').click(function () {
     countdown(keyConst, session);
+    $('#play').hide();
+    $('#pause').show();
   });
 
   $('#pause').click(function () {
     clearInterval(interval);
+    showPlay();
   });
 
   $('#next').click(function () {
     nextPair(keyConst, session);
-    clearInterval(interval);
-    resetTime();
+    resetStop();
   });
 
   $('#stop').click(function () {
-    resetTime();
-    clearInterval(interval);
+    resetStop();
   });
 
   $('.input-hide').click(function () {
@@ -90,12 +104,11 @@ $(document).ready(() => {
   $('.submit-btn').click(function () {
     usableObject = session.getInputs(keyConst);
     runKeySet(keyConst, usableObject);
-    resetTime();
-    clearInterval(interval);
+    resetStop();
   });
   $('.skip').click(() => {
     nextPair(keyConst, session);
-    resetTime();
+    resetStop();
   });
   $('.checkKeys').click(function () {
     event.preventDefault();
