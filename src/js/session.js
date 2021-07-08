@@ -66,7 +66,7 @@ export class Session {
       }
       hideThings([".result-stats"]);
       fadeInThings([".active-stats"]);
-      slideInThings([".skip"])
+      slideInThings([".skip"]);
       this.makePairs(keyArray, modeArray);
       return this.getPair();
     }
