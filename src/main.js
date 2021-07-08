@@ -10,10 +10,9 @@ function displayKeyMode(key, mode, scale) {
   $("#keyDisplay").html(key);
   $("#modeDisplay").html(mode);
   $("#scaleDisplay").html("");
-  scale.forEach(function(element){
-    $("#scaleDisplay").append(element + "&nbsp;" + "&nbsp;" );
+  scale.forEach(function (element) {
+    $("#scaleDisplay").append(element + "&nbsp;" + "&nbsp;");
   });
-
 }
 
 function checkUncheck(name) {
@@ -57,47 +56,58 @@ function runKeySet(keyConst, usableObject) {
 let interval;
 function countdown(entry1, entry2) {
   clearInterval(interval);
-  interval = setInterval(function() {
-      var timer = $('.js-timeout').html();
-      timer = timer.split(':');
-      var minutes = timer[0];
-      var seconds = timer[1];
-      seconds -= 1;
-      if (minutes < 0) return;
-      else if (seconds < 0 && minutes != 0) {
-          minutes -= 1;
-          seconds = 59;
-      }
-      else if (seconds < 10 && length.seconds != 2) seconds = '0' + seconds;
-
-      $('.js-timeout').html(minutes + ':' + seconds);
-
-      if (minutes == 0 && seconds == 0) {clearInterval(interval);
-        nextPair(entry1, entry2);
-        resetTime();
-        setInterval(countdown(entry1,entry2),1000);
+  interval = setInterval(function () {
+    let timer = $('.js-timeout').html();
+    timer = timer.split(':');
+    let minutes = timer[0];
+    let seconds = timer[1];
+    seconds -= 1;
+    if (minutes < 0) return;
+    else if (seconds < 0 && minutes != 0) {
+      minutes -= 1;
+      seconds = 59;
+    }
+    else if (seconds < 10 && length.seconds != 2) seconds = '0' + seconds;
+    $('.js-timeout').html(minutes + ':' + seconds);
+    if (minutes == 0 && seconds == 0 && $(".result-stats").is(":hidden")) {
+      clearInterval(interval);
+      nextPair(entry1, entry2);
+      resetTime();
+      setInterval(countdown(entry1, entry2), 1000);
     }
   }, 1000);
 }
 
 function resetTime() {
-  $('.js-timeout').text("2:00");
+  if ($('input#seconds').val() == 0 && $('input#minutes').val() == 0) {
+    $("#error2").text("Please input a number in minutes or seconds besides 0, otherwise it will default to 5:00.");
+    $('.js-timeout').text('5:00');
+    if ($("#error2").is(":hidden")) {
+      $("#error2").slideToggle();
+    }
+  }
+  else if ($('input#seconds').val() < 10) {
+    $('.js-timeout').text($('input#minutes').val() + ":0" + $('input#seconds').val());
+    if ($("#error2").is(":visible")) {
+      $("#error2").slideToggle();
+    }
+  } else {
+    $('.js-timeout').text($('input#minutes').val() + ":" + $('input#seconds').val());
+    if ($("#error2").is(":visible")) {
+      $("#error2").slideToggle();
+    }
+  }
 }
 
 $(document).ready(() => {
-  $('#start-timer').click(function () {
-    resetTime();
-    clearInterval(interval);
-  }); //same click function to 113
-
   $('#play').click(function () {
     countdown(keyConst, session);
   });
-  
+
   $('#pause').click(function () {
     clearInterval(interval);
   });
-  
+
   $('#next').click(function () {
     nextPair(keyConst, session);
     clearInterval(interval);
@@ -125,10 +135,12 @@ $(document).ready(() => {
   $('.submit-btn').click(function () {
     usableObject = session.getInputs(keyConst);
     runKeySet(keyConst, usableObject);
+    resetTime();
+    clearInterval(interval);
   });
   $('.skip').click(() => {
     nextPair(keyConst, session);
-    $('.js-timeout').text("2:00");
+    resetTime();
   });
   $('.checkKeys').click(function () {
     event.preventDefault();
@@ -139,6 +151,7 @@ $(document).ready(() => {
     checkUncheck("mode");
   });
 });
+
 
 
 
