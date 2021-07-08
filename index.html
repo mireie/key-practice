@@ -16,6 +16,7 @@
     <div class="row app-container">
       <div class="col-md " id="entry">
         <form class="" id="form">
+
           <div class="entry-block">
             <div class="controls mt-3">
               <div class="alert-danger p-1" id="error"></div>
@@ -179,6 +180,13 @@
               <div class="card-body">
                 <h5 class="card-title display-4"><span id="keyDisplay"></span>-<span id="modeDisplay"></span></h5>
                 <p class="card-text"><span id="scaleDisplay"></span></p>
+                        <p>Session will end in <span class="js-timeout">2:00</span></p>
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+          <button id="play" type="button" class="btn btn-outline-primary">Play</button>
+          <button id="pause" type="button" class="btn btn-outline-primary">Pause</button>
+          <button id="next" type="button" class="btn btn-outline-primary">Skip</button>
+          <button id="stop" type="button" class="btn btn-outline-primary">Stop</button>
+        </div>
               </div>
               <div class="card-footer text-muted">
                 Scale <span id="counter"></span> of <span id="scale-total"></span>
