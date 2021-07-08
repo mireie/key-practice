@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import Keys from './js/keys.js';
 import { Session } from './js/session';
+// import { countdown,resetTime,interval } from './js/timer.js';
 
 
 function displayKeyMode(key, mode, scale) {
@@ -55,7 +56,6 @@ function runKeySet(keyConst, usableObject) {
 
 let interval;
 function countdown(entry1, entry2) {
-  clearInterval(interval);
   interval = setInterval(function () {
     let timer = $('.js-timeout').html();
     timer = timer.split(':');
