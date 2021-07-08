@@ -12,24 +12,16 @@
 <body>
   <div class="container">
     <div class="header">
-      <h1>Practice Buddy</h1>
-      <p></p>
     </div>
     <div class="row app-container">
-      <div class="col sticky-top" id="entry">
-        <form class="sticky-top" id="form">
-          <p>
-          <h2>Controls</h2>
-          <div id="start-timer" class="btn submit-btn">Submit</div>
-          <div class="btn mt-3 skip">Next Pair</div>
-          </p>
+      <div class="col-md " id="entry">
+        <form class="" id="form">
+
           <div class="entry-block">
-            <input type="checkbox" name="advanced" id="advanced">
-            <label for="advanced">Customize keys and modes</label>
-            <div class="advanced">
+            <div class="controls mt-3">
               <div class="alert-danger p-1" id="error"></div>
-              <h2>Keys</h2>
-              <button class="btn checkKeys">Check All Keys</button>
+              <h2 class="display-4">Keys</h2>
+              <div class="btn checkKeys mb-3">Select All Keys</div>
               <div class="row keys-container">
                 <div class="col">
                   <div class="form-check">
@@ -110,30 +102,35 @@
                   </div>
                 </div>
               </div>
-              <h2>Modes</h2>
-              <button class="btn checkModes">Check All Modes</button>
+              <hr>
+              <h2 class="display-4">Modes</h2>
+              <div class="btn checkModes mb-3">Select All Modes</div>
               <div class="row modes-container">
                 <div class="col">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" checked="true" value="ionian" id="ionianCheck" name="mode">
+                    <input class="form-check-input" type="checkbox" checked="true" value="Ionian" id="ionianCheck"
+                      name="mode">
                     <label class="form-check-label" for="ionianCheck">
                       Ionian (Major)
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" checked="true" value="dorian" id="dorianCheck" name="mode">
+                    <input class="form-check-input" type="checkbox" checked="true" value="Dorian" id="dorianCheck"
+                      name="mode">
                     <label class="form-check-label" for="dorianCheck">
                       Dorian
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" checked="true" value="phrygian" id="phrygianCheck" name="mode">
+                    <input class="form-check-input" type="checkbox" checked="true" value="Phrygian" id="phrygianCheck"
+                      name="mode">
                     <label class="form-check-label" for="phrygianCheck">
                       Phrygian
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" checked="true" value="lydian" id="lydianCheck" name="mode">
+                    <input class="form-check-input" type="checkbox" checked="true" value="Lydian" id="lydianCheck"
+                      name="mode">
                     <label class="form-check-label" for="lydianCheck">
                       Lydian
                     </label>
@@ -142,19 +139,22 @@
                 </div>
                 <div class="col">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" checked="true" value="mixolydian" id="mixolydianCheck" name="mode">
+                    <input class="form-check-input" type="checkbox" checked="true" value="Mixolydian"
+                      id="mixolydianCheck" name="mode">
                     <label class="form-check-label" for="mixolydianCheck">
                       Mixolydian
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" checked="true" value="aeolian" id="aeolianCheck" name="mode">
+                    <input class="form-check-input" type="checkbox" checked="true" value="Aeolian" id="aeolianCheck"
+                      name="mode">
                     <label class="form-check-label" for="aeolianCheck">
                       Aeolian
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" checked="true" value="locrian" id="locrianCheck" name="mode">
+                    <input class="form-check-input" type="checkbox" checked="true" value="Locrian" id="locrianCheck"
+                      name="mode">
                     <label class="form-check-label" for="locrianCheck">
                       Locrian
                     </label>
@@ -163,25 +163,51 @@
                 </div>
               </div>
             </div>
+            <hr>
+            <div class="btn mt-3 skip">Next Scale</div>
+            <div class="btn submit-btn mt-3">Submit</div>
           </div>
         </form>
-        <div class="input-hide"><span id="input-text">Hide</span> the Options</div>
+        <!-- <div class="input-hide"><span id="input-text">Hide</span> the Options</div> -->
       </div>
       <div class="col-md-8 border-left" id="result">
-        <h2>Information</h2>
-        <hr>
-        <h3>Key: <span id="keyDisplay"></span></h3>
-        <h3>Mode: <span id="modeDisplay"></span></h3>
-        <h3>Scale: <span id="scaleDisplay"></span></h3>
-        <h3>Timer</h3>
-        <p>Session will end in <span class="js-timeout">2:00</span></p>
+        <div class="row card-contain">
+          <div class="col-12 active-stats">
+            <div class="card text-center">
+              <div class="card-header">
+                <h2 class="display-3">Scale</h2>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title display-4"><span id="keyDisplay"></span>-<span id="modeDisplay"></span></h5>
+                <p class="card-text"><span id="scaleDisplay"></span></p>
+                        <p>Session will end in <span class="js-timeout">2:00</span></p>
         <div class="btn-group" role="group" aria-label="Basic outlined example">
           <button id="play" type="button" class="btn btn-outline-primary">Play</button>
           <button id="pause" type="button" class="btn btn-outline-primary">Pause</button>
           <button id="next" type="button" class="btn btn-outline-primary">Skip</button>
           <button id="stop" type="button" class="btn btn-outline-primary">Stop</button>
         </div>
-        <p id="output"></p>
+              </div>
+              <div class="card-footer text-muted">
+                Scale <span id="counter"></span> of <span id="scale-total"></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 result-stats">
+            <div class="card text-center">
+              <div class="card-header">
+                <h2 class="display-3">All Done!</h2>
+              </div>
+              <div class="card-body">
+                <h4 class="display-4">Scales Practiced</h4>
+                <ul id="scale-list"></ul>
+              </div>
+              <div class="card-footer text-muted">
+                <span id="scale-total-results"></span> Total Scales
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -9,7 +9,11 @@ import { Session } from './js/session';
 function displayKeyMode(key, mode, scale) {
   $("#keyDisplay").html(key);
   $("#modeDisplay").html(mode);
-  $("#scaleDisplay").html(scale);
+  $("#scaleDisplay").html("");
+  scale.forEach(function(element){
+    $("#scaleDisplay").append(element + "&nbsp;" + "&nbsp;" );
+  });
+
 }
 
 function checkUncheck(name) {
@@ -37,7 +41,9 @@ function checkUncheck(name) {
 
 function nextPair(keyConst, session) {
   let usableObject = session.getPair();
-  runKeySet(keyConst, usableObject);
+  if (typeof usableObject !== "undefined") {
+    runKeySet(keyConst, usableObject);
+  }
 }
 
 function runKeySet(keyConst, usableObject) {
@@ -115,20 +121,14 @@ $(document).ready(() => {
     }
     $('form').slideToggle();
   });
-  $('#advanced').click(function () {
-    $('.advanced').slideToggle();
-  });
-  
+
   let keyConst = new Keys();
   let session = new Session();
   let usableObject;
-  
-  $('.submit-btn').click(function () {
-    session.getInputs();
-    usableObject = session.getPair();
-    runKeySet(keyConst, usableObject);
-    $('.submit-btn').text('Get New Pairs');
 
+  $('.submit-btn').click(function () {
+    usableObject = session.getInputs(keyConst);
+    runKeySet(keyConst, usableObject);
   });
   $('.skip').click(() => {
     nextPair(keyConst, session);
