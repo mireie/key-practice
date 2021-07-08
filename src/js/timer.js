@@ -18,7 +18,7 @@ export function countdown(entry1, entry2) {
       seconds = '0' + seconds;
       $('.js-timeout').html(minutes + ':' + seconds);
     }
-    if (minutes == 0 && seconds == "0-1" && $(".result-stats").is(":hidden")) {
+    if (minutes == 0 && seconds == 0 && $(".result-stats").is(":hidden")) {
       clearInterval(interval);
       nextPair(entry1, entry2);
       resetTime();

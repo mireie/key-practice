@@ -37,7 +37,7 @@ export class Session {
     } else {
       $("#scale-total").text(userNumber);
     }
-    if (availablePairs.length < 1 || this.counter === userNumber) {
+    if (availablePairs.length < 1 || this.counter >= userNumber) {
       this.sessionComplete();
     } else {
       const seed = Math.floor(Math.random() * availablePairs.length);
