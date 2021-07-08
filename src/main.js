@@ -54,24 +54,38 @@ function runKeySet(keyConst, usableObject) {
   displayKeyMode(usableObject.key, usableObject.mode, scale);
 }
 
+function showPlay() {
+  if ($('#play').is(":hidden")) {
+    $('#play').show();
+    $('#pause').hide();
+  }
+}
+
+function resetStop() {
+  resetTime();
+  clearInterval(interval);
+  showPlay();
+}
+
 $(document).ready(() => {
   $('#play').click(function () {
     countdown(keyConst, session);
+    $('#play').hide();
+    $('#pause').show();
   });
 
   $('#pause').click(function () {
     clearInterval(interval);
+    showPlay();
   });
 
   $('#next').click(function () {
     nextPair(keyConst, session);
-    clearInterval(interval);
-    resetTime();
+    resetStop();
   });
 
   $('#stop').click(function () {
-    resetTime();
-    clearInterval(interval);
+    resetStop();
   });
 
   $('.input-hide').click(function () {
@@ -90,12 +104,11 @@ $(document).ready(() => {
   $('.submit-btn').click(function () {
     usableObject = session.getInputs(keyConst);
     runKeySet(keyConst, usableObject);
-    resetTime();
-    clearInterval(interval);
+    resetStop();
   });
   $('.skip').click(() => {
     nextPair(keyConst, session);
-    resetTime();
+    resetStop();
   });
   $('.checkKeys').click(function () {
     event.preventDefault();
@@ -106,7 +119,4 @@ $(document).ready(() => {
     checkUncheck("mode");
   });
 });
-
-
-
 
